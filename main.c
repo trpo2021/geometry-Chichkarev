@@ -185,3 +185,22 @@ void str_copy(char input[], char* output_circle)
     j++;
     output_circle[j] = '\0';
 }
+void output(char* output_circle)
+{
+    fputs(output_circle, stdout);
+}
+    int main()
+{
+    int max = 1000, size_output_circle;
+    char* input = NULL;
+    input = calloc(max, sizeof(char));
+    char* output_circle = NULL;
+    fgets(input, max, stdin);
+    size_output_circle = correct(input);
+    output_circle = calloc(size_output_circle, sizeof(char));
+    str_copy(input, output_circle);
+    output(output_circle);
+    free(input);
+    printf("\n");
+    return 0;
+}
